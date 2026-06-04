@@ -1,13 +1,13 @@
-/* DISE—O E IMPLEMENTACI”N */
+Ôªø/* DISE√ëO E IMPLEMENTACI√ìN */
 
--- CREACI”N DE LA BASE DE DATOS
+-- CREACI√ìN DE LA BASE DE DATOS
 CREATE DATABASE [CineBD]
 GO
 
 USE [CineBD]
 GO
 
--- CREACI”N DE LAS TABLAS PARA LA INFORMACI”N DEL CINE
+-- CREACI√ìN DE LAS TABLAS PARA LA INFORMACI√ìN DEL CINE
 
 CREATE TABLE [Tipo_Documento]
 (
@@ -129,20 +129,20 @@ GO
 -- REGISTROS INICIALES DE LA BASE DE DATOS
 
 INSERT INTO Tipo_Documento VALUES
-(1,'CÈdula de ciudadanÌa'),
+(1,'C√©dula de ciudadan√≠a'),
 (2,'Tarjeta de identidad'),
-(3,'CÈdula extranjera'),
+(3,'C√©dula extranjera'),
 (4,'Pasaporte'),
 (5,'Registro civil'),
 (6,'Documento militar'),
-(7,'Licencia conducciÛn'),
+(7,'Licencia conducci√≥n'),
 (8,'Documento nacional'),
 (9,'Permiso temporal'),
 (10,'Carnet estudiante'),
 (11,'Carnet empresa'),
-(12,'Documento diplom·tico'),
-(13,'Documento migraciÛn'),
-(14,'IdentificaciÛn escolar'),
+(12,'Documento diplom√°tico'),
+(13,'Documento migraci√≥n'),
+(14,'Identificaci√≥n escolar'),
 (15,'Permiso residencia'),
 (16,'ID universitario'),
 (17,'Documento regional'),
@@ -163,7 +163,7 @@ INSERT INTO Tipo_Producto VALUES
 (9,'Hamburguesas'),
 (10,'Chocolates'),
 (11,'Galletas'),
-(12,'CafÈ'),
+(12,'Caf√©'),
 (13,'Jugos'),
 (14,'Agua'),
 (15,'Batidos'),
@@ -198,24 +198,24 @@ INSERT INTO Clasificacion VALUES
 GO
 
 INSERT INTO Categoria VALUES
-(1,'AcciÛn'),
+(1,'Acci√≥n'),
 (2,'Comedia'),
 (3,'Drama'),
 (4,'Terror'),
-(5,'Ciencia ficciÛn'),
+(5,'Ciencia ficci√≥n'),
 (6,'Romance'),
-(7,'AnimaciÛn'),
+(7,'Animaci√≥n'),
 (8,'Aventura'),
 (9,'Fantasia'),
 (10,'Suspenso'),
 (11,'Documental'),
 (12,'Musical'),
-(13,'HistÛrica'),
+(13,'Hist√≥rica'),
 (14,'Misterio'),
 (15,'Crimen'),
 (16,'Familiar'),
 (17,'Deporte'),
-(18,'Biogr·fica'),
+(18,'Biogr√°fica'),
 (19,'Guerra'),
 (20,'Western')
 GO
@@ -292,7 +292,7 @@ GO
 INSERT INTO Producto VALUES
 (1,1,'Coca Cola',7000),
 (2,1,'Pepsi',6500),
-(3,2,'Palomitas pequeÒas',8000),
+(3,2,'Palomitas peque√±as',8000),
 (4,2,'Palomitas medianas',12000),
 (5,2,'Palomitas grandes',15000),
 (6,3,'M&M',6000),
@@ -305,7 +305,7 @@ INSERT INTO Producto VALUES
 (13,9,'Hamburguesa',15000),
 (14,10,'Chocolate',4000),
 (15,11,'Galletas',3500),
-(16,12,'CafÈ',3000),
+(16,12,'Caf√©',3000),
 (17,13,'Jugo natural',4500),
 (18,14,'Agua',3000),
 (19,18,'Gomitas',4000),
@@ -313,7 +313,7 @@ INSERT INTO Producto VALUES
 GO
 
 INSERT INTO Pelicula VALUES
-(1,3,1,'MisiÛn Final',120),
+(1,3,1,'Misi√≥n Final',120),
 (2,2,2,'Risas sin fin',95),
 (3,4,4,'La noche oscura',110),
 (4,3,5,'Viaje a Marte',130),
@@ -321,8 +321,8 @@ INSERT INTO Pelicula VALUES
 (6,1,7,'Aventura animada',90),
 (7,3,8,'Exploradores',115),
 (8,4,10,'Sombras',108),
-(9,2,1,'AcciÛn total',125),
-(10,3,9,'Reinos m·gicos',140),
+(9,2,1,'Acci√≥n total',125),
+(10,3,9,'Reinos m√°gicos',140),
 (11,2,2,'Comedia loca',100),
 (12,3,3,'Drama profundo',112),
 (13,4,4,'Pesadilla',102),
@@ -331,7 +331,7 @@ INSERT INTO Pelicula VALUES
 (16,1,7,'Animales felices',88),
 (17,3,8,'Aventura perdida',121),
 (18,4,10,'Misterio mortal',109),
-(19,2,1,'ExplosiÛn final',132),
+(19,2,1,'Explosi√≥n final',132),
 (20,3,9,'Dragones',136)
 GO
 
@@ -404,14 +404,14 @@ INSERT INTO Venta_Producto VALUES
 (20,20,7,2)
 GO
 
-/* CONSULTAS Y AN¡LISIS */
+/* CONSULTAS Y AN√ÅLISIS */
 
 /* 5 consultas simples (SELECT, FROM, WHERE, HAVING, GROUP BY y ORDER BY) */
 
 -- Contar los productos que se clasifican como palomitas
 SELECT Id_Tipo_Producto, GETDATE() AS FechaHoraSistema, COUNT(Id_Producto) AS NumeroProductos FROM Producto GROUP BY Id_Tipo_Producto HAVING Id_Tipo_Producto = 2
 
--- Mostrar por clasificaciÛn el promedio de la duraciÛn de las peliculas donde el promedio sea mayor a 100
+-- Mostrar por clasificaci√≥n el promedio de la duraci√≥n de las peliculas donde el promedio sea mayor a 100
 SELECT Id_Clasificacion, GETDATE() AS FechaHoraSistema, AVG(Duracion) AS PromedioDuracion FROM Pelicula GROUP BY Id_Clasificacion HAVING AVG(Duracion) > 100
 
 -- Contar las peliculas que comienzan despues de la 1 pm el 4 de junio de 2026
@@ -420,7 +420,7 @@ SELECT Fecha, GETDATE() AS FechaHoraSistema, COUNT(Id_Pelicula) AS NumeroPelicul
 -- Mostrar el nombre de los clientes mayores de edad y ordenarlos de menor a mayor
 SELECT GETDATE() AS FechaHoraSistema, Nombre, Fecha_Nacimiento  FROM Cliente WHERE Fecha_Nacimiento <= DATEADD(YEAR, -18, GETDATE()) ORDER BY Fecha_Nacimiento DESC
 
--- Mostrar los productos que sean jugos o batidos desde el m·s barato al m·s caro
+-- Mostrar los productos que sean jugos o batidos desde el m√°s barato al m√°s caro
 SELECT Nombre, precio, GETDATE() AS FechaHoraSistema FROM Producto WHERE Id_Tipo_Producto IN (13, 15) ORDER BY Precio ASC
 
 /* Consultas usando los JOIN */
@@ -428,22 +428,22 @@ SELECT Nombre, precio, GETDATE() AS FechaHoraSistema FROM Producto WHERE Id_Tipo
 -- Mostrar los productos junto con su tipo de producto (INNER JOIN)
 SELECT P.Id_Producto, P.Nombre AS Producto, T.Nombre AS Tipo FROM Producto P INNER JOIN Tipo_Producto T ON P.Id_Tipo_Producto = T.Id_Tipo_Producto
 
--- Mostrar los productos que se vendieron en 2 o m·s unidades (LEFT JOIN)
+-- Mostrar los productos que se vendieron en 2 o m√°s unidades (LEFT JOIN)
 SELECT P.Id_Producto, P.Nombre AS Producto FROM Producto P LEFT JOIN Venta_Producto V ON P.Id_Producto = V.Id_Producto WHERE V.Cantidad >= 2
 
--- Mostrar el tÌtulo y la duraciÛn de las peliculas que comienzan entre las 8 y 10 pm (RIGHT JOIN)
+-- Mostrar el t√≠tulo y la duraci√≥n de las peliculas que comienzan entre las 8 y 10 pm (RIGHT JOIN)
 SELECT P.Titulo, P.Duracion FROM Funcion F RIGHT JOIN Pelicula P ON F.Id_Pelicula = P.Id_Pelicula WHERE F.Hora BETWEEN '20:00' AND '22:00'
 
 -- Mostrar todos los registros de los clientes y los tipos de documento en una tabla (FULL JOIN)
 SELECT * FROM Cliente C FULL JOIN Tipo_Documento T ON C.Tipo_Id = T.Tipo_Id
 
--- Mostrar la informaciÛn de los clientes y su tipo de documento (JOIN)
+-- Mostrar la informaci√≥n de los clientes y su tipo de documento (JOIN)
 SELECT T.Documento AS Tipo_Documento, C.Num_Id AS Numero_Documento, C.Fecha_Nacimiento, C.Correo FROM Cliente C JOIN Tipo_Documento T ON C.Tipo_Id = T.Tipo_Id
 
 -- Producto cartesiano entre dos o mas tablas, en este caso, entre pelicula y cliente (CROSS JOIN)
 SELECT * FROM Pelicula CROSS JOIN Cliente
 
-/* MANIPULACI”N DE DATOS Y ESTRUCTURA */
+/* MANIPULACI√ìN DE DATOS Y ESTRUCTURA */
 
 -- Eliminar un registro de una tabla
 SELECT * FROM Tipo_Documento
@@ -453,7 +453,7 @@ DELETE FROM Tipo_Documento WHERE Tipo_Id = 16
 -- Modificar un registro de una tabla
 SELECT Num_Id, Nombre FROM Cliente
 
-UPDATE Cliente SET Nombre = 'MarÌa RodriguÈz' WHERE Num_Id = 1011
+UPDATE Cliente SET Nombre = 'Mar√≠a Rodrigu√©z' WHERE Num_Id = 1011
 
 -- Agregar nueva columna a una tabla
 SELECT * FROM Tipo_Documento
@@ -498,7 +498,7 @@ GO
 SELECT * FROM Cliente_Auxiliar;
 GO
 
--- Se borrar· la tabla auxiliar para el caso anterior
+-- Se borrar√° la tabla auxiliar para el caso anterior
 DROP TABLE Cliente_Auxiliar;
 GO
 
@@ -516,7 +516,7 @@ SELECT DISTINCT Id_Sala FROM Funcion;
 
 -- CASE
 SELECT Nombre, Precio,
-    CASE WHEN Precio < 5000 THEN 'EconÛmico' ELSE 'Normal' END AS Tipo_Precio
+    CASE WHEN Precio < 5000 THEN 'Econ√≥mico' ELSE 'Normal' END AS Tipo_Precio
 FROM Producto;
 GO
 
@@ -541,7 +541,7 @@ BEGIN
         -- Validar que la cantidad no sea excesiva
         IF @Cantidad > 20
         BEGIN
-            SET @Resultado = 'Error: No se pueden vender m·s de 20 unidades'
+            SET @Resultado = 'Error: No se pueden vender m√°s de 20 unidades'
             RAISERROR(@Resultado, 16, 1)
         END
         
@@ -585,7 +585,7 @@ GO
 
 -- Variable auxiliar para guardar el OUTPUT del procedimiento almacenado ****DECLARE @Mensaje NVARCHAR(200)****
 
--- VerificaciÛn del procedimiento almacenado de forma correcta
+-- Verificaci√≥n del procedimiento almacenado de forma correcta
 DECLARE @Mensaje NVARCHAR(200)
 
 EXEC sp_RegistrarVentaSimple
@@ -598,7 +598,7 @@ EXEC sp_RegistrarVentaSimple
 SELECT @Mensaje AS Mensaje
 GO
 
--- VerificaciÛn del procedimiento almacenado con cantidad inv·lida
+-- Verificaci√≥n del procedimiento almacenado con cantidad inv√°lida
 DECLARE @Mensaje NVARCHAR(200)
 
 EXEC sp_RegistrarVentaSimple
@@ -611,7 +611,7 @@ EXEC sp_RegistrarVentaSimple
 SELECT @Mensaje AS Mensaje
 GO
 
--- VerificaciÛn del procedimiento almacenado con cantidad excedida (>20)
+-- Verificaci√≥n del procedimiento almacenado con cantidad excedida (>20)
 DECLARE @Mensaje NVARCHAR(200)
 
 EXEC sp_RegistrarVentaSimple
@@ -623,7 +623,7 @@ EXEC sp_RegistrarVentaSimple
 SELECT @Mensaje AS Mensaje
 GO
 
--- VerificaciÛn del procedimiento almacenado con ticket inexistente
+-- Verificaci√≥n del procedimiento almacenado con ticket inexistente
 DECLARE @Mensaje NVARCHAR(200)
 
 EXEC sp_RegistrarVentaSimple
@@ -635,7 +635,7 @@ EXEC sp_RegistrarVentaSimple
 SELECT @Mensaje AS Mensaje
 GO
 
--- VerificaciÛn del procedimiento almacenado con producto inexistente
+-- Verificaci√≥n del procedimiento almacenado con producto inexistente
 DECLARE @Mensaje NVARCHAR(200)
 
 EXEC sp_RegistrarVentaSimple
@@ -662,13 +662,13 @@ BEGIN
             RAISERROR('La cantidad debe ser mayor a 0', 16, 1)
         END
         
-        -- Validar cantidad m·xima
+        -- Validar cantidad m√°xima
         IF EXISTS (SELECT 1 FROM inserted WHERE Cantidad > 50)
         BEGIN
             RAISERROR('La cantidad no puede superar 50 unidades', 16, 1)
         END
         
-        PRINT '*** ValidaciÛn exitosa ***'
+        PRINT '*** Validaci√≥n exitosa ***'
     END TRY
     BEGIN CATCH
         DECLARE @Msg NVARCHAR(500) = '*** Error: ' + ERROR_MESSAGE() + ' ***'
@@ -678,33 +678,198 @@ BEGIN
 END
 GO
 
--- INSERT correcto despuÈs de crear el TRIGGER
+-- INSERT correcto despu√©s de crear el TRIGGER
 INSERT INTO Venta_Producto (Id_Venta, Id_Ticket, Id_Producto, Cantidad) VALUES (21, 1, 1, 2)
 GO
 
 SELECT * FROM Venta_Producto WHERE Id_Venta = 21
 GO
 
--- INSERT incorrecto despuÈs de crear el TRIGGER (caso <= 0)
+-- INSERT incorrecto despu√©s de crear el TRIGGER (caso <= 0)
 INSERT INTO Venta_Producto (Id_Venta, Id_Ticket, Id_Producto, Cantidad) VALUES (22, 1, 2, 0)
 GO
 
--- INSERT incorrecto despuÈs de crear el TRIGGER (caso > 50)
+-- INSERT incorrecto despu√©s de crear el TRIGGER (caso > 50)
 INSERT INTO Venta_Producto (Id_Venta, Id_Ticket, Id_Producto, Cantidad) VALUES (23, 2, 4, 51)
 GO
 
--- UPDATE correcto despuÈs de crear el TRIGGER
+-- UPDATE correcto despu√©s de crear el TRIGGER
 UPDATE Venta_Producto SET Cantidad = 5 WHERE Id_Venta = 21
 GO
 
 SELECT * FROM Venta_Producto WHERE Id_Venta = 21
 GO
 
---UPDATE incorrecto despuÈs de crear el TRIGGER
+--UPDATE incorrecto despu√©s de crear el TRIGGER
 UPDATE Venta_Producto SET Cantidad = 0 WHERE Id_Venta = 21
 GO
 
--- Vista est·ndar
+-- Cursor
+CREATE PROCEDURE sp_ReporteVentasPorCliente
+    @NumId  INT = NULL,
+    @TipoId INT = NULL
+AS
+BEGIN
+    SET NOCOUNT ON
+
+    BEGIN TRY
+
+        -- Validar que si se pasa uno de los dos filtros, se pasen ambos
+        IF (@NumId IS NOT NULL AND @TipoId IS NULL) OR
+           (@TipoId IS NOT NULL AND @NumId IS NULL)
+        BEGIN
+            RAISERROR('Debe proporcionar tanto @NumId como @TipoId para filtrar por cliente.', 16, 1)
+            RETURN
+        END
+
+        -- Validar que el cliente exista si se proporcionaron filtros
+        IF @NumId IS NOT NULL AND NOT EXISTS (
+            SELECT 1 FROM Cliente
+            WHERE Num_Id = @NumId AND Tipo_Id = @TipoId
+        )
+        BEGIN
+            RAISERROR('El cliente especificado no existe.', 16, 1)
+            RETURN
+        END
+
+        -- Declaraci√≥n de variables
+        DECLARE
+            @vTipoId         INT,
+            @vNumId          INT,
+            @vNombreCliente  NVARCHAR(50),
+            @vIdTicket       INT,
+            @vPrecioTicket   MONEY,
+            @vTituloFuncion  NVARCHAR(70),
+            @vNombreProducto NVARCHAR(50),
+            @vCantidad       INT,
+            @vPrecioProducto MONEY,
+            @vTotalTickets   MONEY,
+            @vTotalProductos MONEY,
+            @vTotalGeneral   MONEY
+
+        -- CURSOR PRINCIPAL: clientes (con filtro opcional)
+        DECLARE cursor_clientes CURSOR FOR
+            SELECT Tipo_Id, Num_Id, Nombre
+            FROM Cliente
+            WHERE (@NumId IS NULL OR (Num_Id = @NumId AND Tipo_Id = @TipoId))
+            ORDER BY Nombre
+
+        OPEN cursor_clientes
+        FETCH NEXT FROM cursor_clientes INTO @vTipoId, @vNumId, @vNombreCliente
+
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            SET @vTotalTickets   = 0
+            SET @vTotalProductos = 0
+
+            PRINT '============================================================'
+            PRINT 'CLIENTE: ' + @vNombreCliente + ' (ID: ' + CAST(@vNumId AS VARCHAR) + ')'
+            PRINT '============================================================'
+
+            -- CURSOR ANIDADO: tickets del cliente
+            DECLARE cursor_tickets CURSOR FOR
+                SELECT T.Id_Ticket, T.Precio, P.Titulo
+                FROM Ticket T
+                INNER JOIN Funcion F  ON T.Id_Funcion  = F.Id_Funcion
+                INNER JOIN Pelicula P ON F.Id_Pelicula = P.Id_Pelicula
+                WHERE T.Tipo_Id_Cliente = @vTipoId
+                  AND T.Num_Id_Cliente  = @vNumId
+
+            OPEN cursor_tickets
+            FETCH NEXT FROM cursor_tickets INTO @vIdTicket, @vPrecioTicket, @vTituloFuncion
+
+            WHILE @@FETCH_STATUS = 0
+            BEGIN
+                SET @vTotalProductos = 0
+
+                PRINT '  >> Ticket #' + CAST(@vIdTicket AS VARCHAR) +
+                      ' | Pel√≠cula: '      + @vTituloFuncion +
+                      ' | Precio entrada: $' + CAST(@vPrecioTicket AS VARCHAR)
+
+                -- CURSOR ANIDADO: productos del ticket
+                DECLARE cursor_productos CURSOR FOR
+                    SELECT PR.Nombre, VP.Cantidad, PR.Precio
+                    FROM Venta_Producto VP
+                    INNER JOIN Producto PR ON VP.Id_Producto = PR.Id_Producto
+                    WHERE VP.Id_Ticket = @vIdTicket
+
+                OPEN cursor_productos
+                FETCH NEXT FROM cursor_productos INTO @vNombreProducto, @vCantidad, @vPrecioProducto
+
+                WHILE @@FETCH_STATUS = 0
+                BEGIN
+                    SET @vTotalProductos = @vTotalProductos + (@vCantidad * @vPrecioProducto)
+
+                    PRINT '      - Producto: '  + @vNombreProducto +
+                          ' | Cantidad: '       + CAST(@vCantidad AS VARCHAR) +
+                          ' | Subtotal: $'      + CAST(@vCantidad * @vPrecioProducto AS VARCHAR)
+
+                    FETCH NEXT FROM cursor_productos INTO @vNombreProducto, @vCantidad, @vPrecioProducto
+                END
+
+                CLOSE cursor_productos
+                DEALLOCATE cursor_productos
+
+                SET @vTotalTickets = @vTotalTickets + @vPrecioTicket
+
+                PRINT '      Total productos este ticket: $' + CAST(@vTotalProductos AS VARCHAR)
+
+                FETCH NEXT FROM cursor_tickets INTO @vIdTicket, @vPrecioTicket, @vTituloFuncion
+            END
+
+            CLOSE cursor_tickets
+            DEALLOCATE cursor_tickets
+
+            SET @vTotalGeneral = @vTotalTickets + @vTotalProductos
+
+            PRINT '  *** TOTAL ENTRADAS:  $' + CAST(@vTotalTickets   AS VARCHAR)
+            PRINT '  *** TOTAL PRODUCTOS: $' + CAST(@vTotalProductos AS VARCHAR)
+            PRINT '  *** TOTAL GENERAL:   $' + CAST(@vTotalGeneral   AS VARCHAR)
+            PRINT ''
+
+            FETCH NEXT FROM cursor_clientes INTO @vTipoId, @vNumId, @vNombreCliente
+        END
+
+        CLOSE cursor_clientes
+        DEALLOCATE cursor_clientes
+
+    END TRY
+    BEGIN CATCH
+        -- Limpiar cursores abiertos en caso de error
+        IF CURSOR_STATUS('local', 'cursor_productos') >= 0
+        BEGIN
+            CLOSE cursor_productos
+            DEALLOCATE cursor_productos
+        END
+
+        IF CURSOR_STATUS('local', 'cursor_tickets') >= 0
+        BEGIN
+            CLOSE cursor_tickets
+            DEALLOCATE cursor_tickets
+        END
+
+        IF CURSOR_STATUS('local', 'cursor_clientes') >= 0
+        BEGIN
+            CLOSE cursor_clientes
+            DEALLOCATE cursor_clientes
+        END
+
+        PRINT '*** Error: ' + ERROR_MESSAGE() + ' ***'
+    END CATCH
+END
+GO
+
+-- CURSOR: Reporte de todos los clientes
+EXEC sp_ReporteVentasPorCliente
+
+-- CURSOR: Reporte de un cliente espec√≠fico
+EXEC sp_ReporteVentasPorCliente @NumId = 1001, @TipoId = 1
+
+-- CURSOR: Solo @NumId sin @TipoId ‚Üí dispara validaci√≥n de error
+EXEC sp_ReporteVentasPorCliente @NumId = 1001
+GO
+
+-- Vista est√°ndar
 CREATE VIEW Vista_ProductosVendidos AS
 SELECT P.Nombre, SUM(VP.Cantidad) AS TotalVendido
 FROM Producto P
